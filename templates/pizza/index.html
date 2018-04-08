@@ -1,63 +1,75 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
-<title>W3.CSS Template</title>
+<head>
+<title>Suck my Pizza!</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
 <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lobster" rel="stylesheet">
-
+ <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Vampiro+One" rel="stylesheet"> 
 
 <style>
-body, html {height: 100%}
+body, html {height: 100% }
 body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 .bkg {
-  background-color: black;
+  background-color: white;
 }
 
 
 
 .oven {
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("/static/images/oven.jpg");
+  background-image: url("{% static 'images/pan.jpg' %}");
+  background-position: center;
   min-height: 100%;
+  filter: brightness(80%);
+
 }
 
 .menu {display: none}
 .bgimg {
+    background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("/static/images/background.jpg");
-    min-height: 131%;
+    background-image: url("{% static 'images/oven.jpg' %}");
+    min-height: 100%;
+    filter: brightness(80%);
+   
+
 }
 </style>
+</head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top w3-hide-small">
   <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
-    <a href="#" class="w3-bar-item w3-button">HOME</a>
-    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
-    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button" style="font-weight: bold;">HOME</a>
+    <a href="#menu" class="w3-bar-item w3-button" style="font-weight: bold;">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button" style="font-weight: bold;">ABOUT</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="font-weight: bold;">CONTACT</a>
   </div>
 </div>
 
 <!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+<header class="bgimg w3-display-container" id="home">
   <div class="w3-display-bottomright w3-padding">
     <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
   </div>
-  <div class="w3-display-middle w3-center">
-    <span class="w3-text-white w3-hide-small" style="font-size:100px">thin<br>CRUST PIZZA</span>
-    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>thin<br>CRUST PIZZA</b></span>
+  <div class="w3-center" style="padding-top: 200px; ">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px; font-weight: bold;"><br>HOLLY PIZZA</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>thin<br>Take it! PIZZAGOD wants You!</b></span>
     <p><a href="#menu" class="w3-button w3-xxlarge w3-black">Let me see the menu</a></p>
   </div>
 </header>
 
 <!-- Menu Container -->
-<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+<div class="w3-container w3-padding-64 w3-xxlarge" style="background-color: white" id="menu">
   <div class="w3-content">
 
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
@@ -73,7 +85,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
       </a>
     </div>
 
-    <div id="Pizza" class="w3-container menu w3-padding-32 w3-black">
+    <div id="Pizza" class="w3-container menu w3-padding-32" style="background-color: white;">
       <h1><b>Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$12.50</span></h1>
       <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
       <hr>
@@ -98,7 +110,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
       <p class="w3-text-grey">Fresh tomatoes, mozzarella, parma, bacon, fresh arugula</p>
     </div>
 
-    <div id="Pasta" class="w3-container menu w3-padding-32 w3-black">
+    <div id="Pasta" class="w3-container menu w3-padding-32" style="background-color: white;">
       <h1><b>Lasagna</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">$13.50</span></h1>
       <p class="w3-text-grey">Special sauce, mozzarella, parmesan, ground beef</p>
       <hr>
@@ -116,9 +128,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
     </div>
 
 
-    <div id="Starter" class="w3-container menu w3-padding-32 w3-black">
+    <div id="Starter" class="w3-container menu w3-padding-32" style="background-color: white;">
       <h1><b>Today's Soup</b> <span class="w3-tag w3-grey w3-round">Seasonal</span><span class="w3-right w3-tag w3-dark-grey w3-round">$5.50</span></h1>
-      <p class="w3-text-grey">Ask the waiter</p>
+      <p class="w3-text-grey">Ask the waiter or your wife</p>
       <hr>
 
       <h1><b>Bruschetta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">$8.50</span></h1>
@@ -137,16 +149,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 </div>
 
 <!-- About Container -->
-<div class="w3-container w3-padding-64 w3-red oven w3-grayscale w3-xlarge" id="about">
+<div class="w3-container w3-padding-64 oven w3-xlarge" style=" font-family: 'Leckerli One', cursive;color: black;" id="about">
   <div class="w3-content">
-    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
-    <p>The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <p><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
-    <p>We are proud of our interiors.</p>
-    <img src="/w3images/onepage_restaurant.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
-    <h1><b>Opening Hours</b></h1>
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px; font-weight: bold;font-family: 'Vampiro One', cursive; ">About</h1>
+    <p style="font-size: 32px;font-weight: bold;">The Pizza Restaurant was founded in blabla by Mr. Italiano in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p style="font-weight: bold;"><strong>The Chef?</strong> Mr. Italiano himself<img src="/w3images/chef.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <p style="font-weight: bold;">We are proud of our interiors.</p>
+   
+    <h1 style="font-family: 'Vampiro One', cursive;font-weight: bold;"><b>Opening Hours</b></h1>
 
-    <div class="w3-row">
+    <div class="w3-row" style="font-weight: bold;">
       <div class="w3-col s6">
         <p>Mon & Tue CLOSED</p>
         <p>Wednesday 10.00 - 24.00</p>
@@ -165,23 +177,55 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 <!-- Contact -->
 
 
-<div class="w3-container w3-padding-64 w3-black w3-grayscale-min w3-xlarge" id="contact">
+<div class="w3-container w3-padding-64 w3-xlarge"  style="background-color: white;" id="contact">
   <div class="w3-content">
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
     <p>Find us at some address at some place or call us at 05050515-122330</p>
     <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
     <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-      <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
-    </form>
+
+   <form method='post'>
+        {% csrf_token %}
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          
+
+          <div class="form-group">
+              <input style="width:100%;" type="text" name="email" value="" placeholder="Email"/>
+          </div>
+
+          <div class='form-group'>
+              <input style="width:100%;" type="text" name="subject" placeholder="Subject">
+          </div>
+
+          <div class="form-group">
+              <textarea style="width:100%;" type="text" name="message" value="" rows="6" placeholder="Message">
+              </textarea>
+          </div>
+         </div>
+        <div class="form-actions">
+        <div style="text-align: center; padding-top: 50px;">
+          <button  type="Submit">Submit</button>
+          
+        </div>
+      </div>
+
+
+      </form>
+
+
+
+
   </div>
 </div>
 
-
+<footer style="text-align: center; font-size: 18px;">
+  <div class="copyright">
+          <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
+          This is just an example of web-site using django.<br/>
+          For further details please contact <br/>
+          norvux@protonmail.com or refer to the <a href="nordev@pythonanywhere.com"> nordev.pythonanywhere.com</a> <br/><br/>2018</p>
+  </div>
+</footer>
 
 
 <script>
